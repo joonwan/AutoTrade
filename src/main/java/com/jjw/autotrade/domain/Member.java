@@ -1,4 +1,4 @@
-package com.jjw.autotrade.domain.member;
+package com.jjw.autotrade.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
