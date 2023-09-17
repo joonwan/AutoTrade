@@ -6,5 +6,5 @@ public interface MemberService {
 
     Member join(Member member);
 
-    Member findMember(Long member);
+    Member findMember(Long memberId);
 }
