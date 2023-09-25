@@ -13,4 +13,8 @@ public class Member {
     private Long Id;
 
     private String name;
+
+    private String ACCESS_KEY;
+
+    private String SECRET_KEY;
 }

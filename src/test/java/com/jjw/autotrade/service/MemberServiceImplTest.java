@@ -1,6 +1,7 @@
 package com.jjw.autotrade.service;
 
 import com.jjw.autotrade.domain.Member;
+import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -14,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @Transactional
 @SpringBootTest
 @RunWith(SpringRunner.class)
+@Slf4j
 class MemberServiceImplTest {
 
     private final MemberService memberService;
@@ -38,5 +40,17 @@ class MemberServiceImplTest {
         //then
 
         Assertions.assertThat(member.getId()).isEqualTo(findMember.getId());
+    }
+
+    @Test
+    public void createJWTToken() throws Exception {
+        //given
+        Member member = new Member();
+        member.setACCESS_KEY("");
+        member.setSECRET_KEY("");
+
+
+        String memberInfo = memberService.getMemberInfo(member.getACCESS_KEY(), member.getSECRET_KEY(), null);
+        log.info(memberInfo);
     }
 }
