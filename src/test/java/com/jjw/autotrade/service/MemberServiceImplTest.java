@@ -1,6 +1,7 @@
 package com.jjw.autotrade.service;
 
 import com.jjw.autotrade.domain.Member;
+import com.jjw.autotrade.memberconst.MemberConst;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -45,9 +46,10 @@ class MemberServiceImplTest {
     @Test
     public void createJWTToken() throws Exception {
         //given
+
         Member member = new Member();
-        member.setACCESS_KEY("");
-        member.setSECRET_KEY("");
+        member.setACCESS_KEY(MemberConst.ACCESS_KEY);
+        member.setSECRET_KEY(MemberConst.PRIVATE_KEY);
 
 
         String memberInfo = memberService.getMemberInfo(member.getACCESS_KEY(), member.getSECRET_KEY(), null);

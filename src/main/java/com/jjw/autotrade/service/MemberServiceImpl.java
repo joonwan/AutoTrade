@@ -63,7 +63,7 @@ public class MemberServiceImpl implements MemberService{
         }
         return null;
     }
-    public String getAuthenticationToken(String accessKey, String secretKey, String queryString)  {
+    private String getAuthenticationToken(String accessKey, String secretKey, String queryString)  {
         String jwtToken = "";
         String authenticationToken = "Bearer ";
         if(queryString == null){
